@@ -5,7 +5,7 @@
 ## Introduction
 In today's digital landscape, establishing a robust network infrastructure is essential for organizations to ensure seamless operations and effective resource management. One critical component of such infrastructure is an Active Directory (AD) environment, which provides centralized authentication, authorization, and network management capabilities. 
 
-For this project, VMware was utilized to create an integrated environment that consisted of a Windows Server 2019 Virtual Machine (VM) serving as the Domain Controller (DC) with Active Directory (AD) service. A custom PowerShell script was then executed to populate AD with approximately 1000 fictional users. I then created the following VMs: Windows 10 Pro, Ubuntu 22.04.4, and Ubuntu 23.10.1. The VMs were then integrated into the AD domain to create a centralized management system for user accounts, computers, and other network resources. Initially Virtual Box was utilized with success and later VMware was used to confirm the ability to reproduce in another environment and test a new release of Ubuntu.
+For this project, VMware was utilized to create an integrated environment that consisted of a Windows Server 2019 Virtual Machine (VM) serving as the Domain Controller (DC) with Active Directory (AD) service. A custom PowerShell script was then executed to populate AD with approximately 1000 fictional users. I then created a client machine on Windows 10 to which was integrated into the AD domain's internal network.
 
 ## Technologies and Components Utilized:
 - Active Directory
@@ -39,7 +39,7 @@ For this project, VMware was utilized to create an integrated environment that c
 ## Connecting Windows 10 Pro to AD
 - The creation of the Windows VM was straightforward and I encounted no issues.
 - During the installation I placed the VM on the internal network and created a local account.
-- I then updated the system's name and joined it to my domain.
+- I then updated the system's name and joined it to my domain.<br>
   ![68747470733a2f2f692e696d6775722e636f6d2f3936427a416c696d2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/22ce57a1-ac13-4477-a610-ffcf895b7bc5)
 
 - From there I verified the VM was connected to AD by logging into several of the random users I had created.
