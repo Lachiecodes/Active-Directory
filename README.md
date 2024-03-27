@@ -36,7 +36,7 @@ For this project, VMware was utilized to create an integrated environment that c
 ![68747470733a2f2f692e696d6775722e636f6d2f3246564c6a356d6c2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/4d06030c-f4d3-47ea-8b1f-ed177f845519)
 
 
-## Connecting Windows 10 Pro to AD
+## Connecting Windows 10 Machine to AD
 - The creation of the Windows VM was straightforward and I encounted no issues.
 - During the installation I placed the VM on the internal network and created a local account.
 - I then updated the system's name and joined it to my domain.<br>
