@@ -1,6 +1,6 @@
 # Building an Enterprise Active Directory Environment
 
-![1711131630329](https://github.com/Lachiecodes/Active-Directory/assets/138475757/76ded16b-f089-4f78-a96a-9efafe198e9e)
+
 ## Introduction
 In today's digital landscape, establishing a robust network infrastructure is essential for organizations to ensure seamless operations and effective resource management. One critical component of such infrastructure is an Active Directory (AD) environment, which provides centralized authentication, authorization, and network management capabilities. 
 
