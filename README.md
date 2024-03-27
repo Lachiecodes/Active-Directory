@@ -7,7 +7,7 @@ In today's digital landscape, establishing a robust network infrastructure is es
 In this lab I used two virtual machines on VirtualBox to simulate an Active Directory environment using Windows Server 2019, and Windows 10. After configuring IP Addressing, DNS, AD/DS, NAT/RAS, and DHCP, I use a PowerShell script to create 1000 users in Active Directory. Finally, we create a client machine on Windows 10 to connect to the virtual network and add it to Active Directory.
 
 ## Selecting the Virtualization Software
-Choosing the right virtualization software is the first step in creating a virtualized environment for Windows Active Directory. While I utilized Hyper-V due to having Windows 11 Pro, any virtualization software such as VirtualBox or VMware can be used. The key is to ensure compatibility with your system and the ability to run multiple virtual machines (VMs) concurrently.
+Choosing the right virtualization software is the first step in creating a virtualized environment for Windows Active Directory. While I utilized Oracle VM Virtualbox, any virtualization software such as Hyper-V or VMware can be used. The key is to ensure compatibility with your system and the ability to run multiple virtual machines (VMs) concurrently.
 
 ## Creating Virtual Machines
 The initial phase involves creating four essential virtual machines based on the network topology provided in a YouTube video (link to be inserted). Each VM should be configured with at least 2 CPU cores and a minimum of 50GB of SSD space to ensure optimal performance. Organizing ISO images for installations in a structured manner within File Explorer simplifies the setup process and enhances efficiency.
