@@ -1,7 +1,6 @@
 # Building an Enterprise Active Directory Environment
   ![68747470733a2f2f692e696d6775722e636f6d2f4a5734616c42362e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/9a8cde6e-a484-4996-9393-6ac457682bc0)
 
-
 ## Introduction
 In today's digital landscape, establishing a robust network infrastructure is essential for organizations to ensure seamless operations and effective resource management. One critical component of such infrastructure is an Active Directory (AD) environment, which provides centralized authentication, authorization, and network management capabilities. 
 
@@ -15,11 +14,8 @@ For this project, VMware was utilized to create an integrated environment that c
 - Networking
 - PowerShell
 - Oracle VirtualBox
-- VMware
 - Windows Server 2019
-- Windows 10 Pro
-- Ubuntu 22.04.4
-- Ubuntu 23.10.1
+- Windows 10
 
 ## Windows Server 2019 Setup
 - Two network adapters were used to separate traffic between external and internal.
@@ -35,7 +31,6 @@ For this project, VMware was utilized to create an integrated environment that c
 - After the configurations were completed, I then took time to explore AD by performing tasks such as: creating groups, organizational units, modifying user permissions, disabling users, deleting users, and so on.
 ![68747470733a2f2f692e696d6775722e636f6d2f3246564c6a356d6c2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/4d06030c-f4d3-47ea-8b1f-ed177f845519)
 
-
 ## Connecting Windows 10 Machine to AD
 - The creation of the Windows VM was straightforward and I encounted no issues.
 - During the installation I placed the VM on the internal network and created a local account.
@@ -44,7 +39,6 @@ For this project, VMware was utilized to create an integrated environment that c
 
 - From there I verified the VM was connected to AD by logging into several of the random users I had created.
   ![68747470733a2f2f692e696d6775722e636f6d2f546f45363050676d2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/c082ad84-7199-4d2c-88c9-970f27caf648)
-
 
 ## Conclusion
 In this project, VirtualBox was used to create an integrated AD environment. The first VM was Windows Server 2019 that served as the DC, DHCP, and Active Directory populated with approximately 1000 users. Once the networking configurations were complete for the server, I then created three more VMs and connected them to an internal network using Active Directory.
