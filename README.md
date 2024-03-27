@@ -13,7 +13,7 @@ For this project, VMware was utilized to create an integrated environment that c
 - DNS
 - Networking
 - PowerShell
-- Oracle VirtualBox
+- VMware
 - Windows Server 2019
 - Windows 10
 
@@ -41,7 +41,7 @@ For this project, VMware was utilized to create an integrated environment that c
   ![68747470733a2f2f692e696d6775722e636f6d2f546f45363050676d2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/c082ad84-7199-4d2c-88c9-970f27caf648)
 
 ## Conclusion
-In this project, VirtualBox was used to create an integrated AD environment. The first VM was Windows Server 2019 that served as the DC, DHCP, and Active Directory populated with approximately 1000 users. Once the networking configurations were complete for the server, I then created three more VMs and connected them to an internal network using Active Directory.
+In this project, VMware was used to create an integrated AD environment. The first VM was a Windows Server 2019 that served as the DC, DHCP, and Active Directory populated with approximately 1000 users. Once the networking configurations were complete for the server, I then created one more VM and connected them to an internal network using Active Directory.
 
 Setting up a Windows Active Directory environment is a process that requires careful planning and execution. By leveraging virtualization technology and following best practices in configuration and policy settings, organizations can establish a robust foundation for their IT infrastructure.
 
