@@ -1,5 +1,5 @@
 # Building an Active Directory Environment
-  ![68747470733a2f2f692e696d6775722e636f6d2f4a5734616c42362e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/9a8cde6e-a484-4996-9393-6ac457682bc0)
+ ![260781883-9a11fa39-b1ad-432e-a010-465602dce3bf](https://github.com/Lachiecodes/Active-Directory/assets/138475757/aad72280-e6e2-40a1-a7f3-6d3ce19dac06)
 
 ## Introduction
 In today's digital landscape, establishing a robust network infrastructure is essential for organizations to ensure seamless operations and effective resource management. One critical component of such infrastructure is an Active Directory (AD) environment, which provides centralized authentication, authorization, and network management capabilities. 
