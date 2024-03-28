@@ -4,7 +4,7 @@
 ## Introduction
 In today's digital landscape, establishing a robust network infrastructure is essential for organizations to ensure seamless operations and effective resource management. One critical component of such infrastructure is an Active Directory (AD) environment, which provides centralized authentication, authorization, and network management capabilities. 
 
-For this project, VMware was utilized to create an integrated environment that consisted of a Windows Server 2019 Virtual Machine (VM) serving as the Domain Controller (DC) with Active Directory (AD) service. A custom PowerShell script was then executed to populate AD with approximately 1000 fictional users. I then created a client machine on Windows 10 to which was integrated into the AD domain's internal network.
+For this project, VMware was utilized to create an integrated environment that consisted of a Windows Server 2019 Virtual Machine (VM) serving as the Domain Controller (DC) with Active Directory (AD) service. A custom PowerShell script was then executed to populate AD with approximately 1000 fictional users. I then created two VMs to act as clients on the AD server, one with Windows 10 Pro and the other with Linux Ubuntu LTS 22.04.4, which where integrated into the AD internal network as CLIENT1 and CLIENT2 respectively.
 
 ## Technologies and Components Utilized:
 - Active Directory
@@ -15,7 +15,8 @@ For this project, VMware was utilized to create an integrated environment that c
 - PowerShell
 - VMware
 - Windows Server 2019
-- Windows 10
+- Windows 10 Pro
+- Linux Ubuntu LTS 22.04.4
 
 ## Windows Server 2019 Setup
 First, I downloaded VMware and an ISO for both Windows Server 2019 and Windows 10. The first virtual machine I created was with Windows Server 2019, which will be my Active Directory Domain Controllers. The DC houses 2 network adaptors, the first is to connect to the outside internet, and the second is to connect to the VirtualBox private network. You must make sure to assign 2 adaptors to the DC virtual machine in settings, the first using NAT, and the second dedicated to the internal network.
@@ -52,10 +53,10 @@ The final step is to create the second virtual machine running Windows 10. Durin
   ![68747470733a2f2f692e696d6775722e636f6d2f546f45363050676d2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/c082ad84-7199-4d2c-88c9-970f27caf648)
 
 ## Connecting Linux Ubuntu 22.04.4 Machine to AD
-I wanted to expand the lab to include a second client machine other than Windows, so I decided to connect Linux Ubuntu to Active Directory. This was a little bit more tricky to configure, as straight out of the box, the Ubuntu LTS image (22.04.4) doesn't automatically connect to Windows AD. During installation, you are presented with the option to enter your domainn details, but during the installation this error message appears:<br>
+I wanted to expand the lab to include a second client machine other than Windows, so I decided to connect Linux Ubuntu to Active Directory. This was a little bit more tricky to configure, as straight out of the box, the Ubuntu LTS image (22.04.4) doesn't automatically connect to Windows AD. During installation, you are presented with the option to enter your domain details, but during the installation this error message appears:<br>
 ![68747470733a2f2f692e696d6775722e636f6d2f736473453670706c2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/69a15972-7efa-4a31-b2ed-3f143742ba4e)
 
-After consulting the web, it appears to be a common issue with this distribution of Linux. By using the official documentation, and various websites tutorials I was able to find a work around solution to this problem:<br>
+This is a common issue with the LTS distribution of Linux Ubuntu, and requires manual configuration of the integration into Active Directory. The steps are as follows:
 
 Computer Name: CLIENT2<br>
 Domain Name: mydomain.com<br>
@@ -83,10 +84,11 @@ Administrator Account: user<br>
 ![Screenshot 2024-03-28 182201](https://github.com/Lachiecodes/Active-Directory/assets/138475757/e78bae65-6e93-4640-8a4a-b3de16aaa525)
 
 
-
-
 ## Conclusion
-In this project, VMware was used to create an integrated AD environment. The first VM was a Windows Server 2019 that served as the DC, DHCP, and Active Directory populated with approximately 1000 users. Once the networking configurations were complete for the server, I then created one more VM and connected them to an internal network using Active Directory.
+In this project, VMware was used to create an integrated AD environment. The first VM was a Windows Server 2019 that served as the DC, DHCP, and Active Directory populated with approximately 1000 users. Once the networking configurations were complete for the server, I then created two more VMs and connected them to an internal network using Active Directory.<br>
+
+![Screenshot 2024-03-28 185527](https://github.com/Lachiecodes/Active-Directory/assets/138475757/9a1945d9-dac0-4c05-a879-448e53a70261)
+
 
 Setting up a Windows Active Directory environment is a process that requires careful planning and execution. By leveraging virtualization technology and following best practices in configuration and policy settings, organizations can establish a robust foundation for their IT infrastructure.
 
