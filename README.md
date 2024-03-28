@@ -51,6 +51,40 @@ The final step is to create the second virtual machine running Windows 10. Durin
 - From there I verified the VM was connected to AD by logging into several of the random users I had created.
   ![68747470733a2f2f692e696d6775722e636f6d2f546f45363050676d2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/c082ad84-7199-4d2c-88c9-970f27caf648)
 
+## Connecting Linux Ubuntu 22.04.4 Machine to AD
+I wanted to expand the lab to include a second client machine other than Windows, so I decided to connect Linux Ubuntu to Active Directory. This was a little bit more tricky to configure, as straight out of the box, the Ubuntu LTS image (22.04.4) doesn't automatically connect to Windows AD. During installation, you are presented with the option to enter your domainn details, but during the installation this error message appears:<br>
+![68747470733a2f2f692e696d6775722e636f6d2f736473453670706c2e706e67](https://github.com/Lachiecodes/Active-Directory/assets/138475757/69a15972-7efa-4a31-b2ed-3f143742ba4e)
+
+After consulting the web, it appears to be a common issue with this distribution of Linux. By using the official documentation, and various websites tutorials I was able to find a work around solution to this problem:<br>
+
+Computer Name: CLIENT2<br>
+Domain Name: mydomain.com<br>
+Host Name: CLIENT2.mydomain.com<br>
+Administrator Account: user<br>
+
+1. Create your Ubuntu VM, update everything, and take a snapshot so you can easily go back if something goes wrong. Network settings will be the same as your Windows 10 Pro VM.
+2. Open up the command line interface.
+3. Verify you can ping the DC and that the DC can ping back.
+4. Set the host name for the machine: `sudo hostnamectl set-hostname LINUX.mydomain.com`
+5. Verify the host name: `hostnamectl`
+6. Install the following: `sudo apt install sssd-ad sssd-tools realmd adcli`
+7. Discover the DC: `sudo realm -v discover mydomain.com`
+8. Install the kerberos default config file: `sudo apt-get install -y krb5.conf`
+9. Edit the krb5.conf file. (Capilization matters, verify default_realm is your DC and add rdns = false): `sudo nano /etc/krb5.conf`
+![Screenshot 2024-03-28 181543](https://github.com/Lachiecodes/Active-Directory/assets/138475757/669afca3-8548-4189-844e-6be507a005e8)
+10. Install this package: `sudo apt install krb5-user`
+11. Obtain Kerberous ticket with an account that has admin priviledges: `kinit username`
+12. Connect the system to the DC: `realm join -v -U username mydomain.com`
+13. Verify you have can see random users in your AD: `id user@mydomain.com`
+![Screenshot 2024-03-28 181910](https://github.com/Lachiecodes/Active-Directory/assets/138475757/3c7c6f47-db25-41fd-865b-162b26c7c5a3)
+14. Now log off your primary account and pick a random user in AD: user@mydomain.com
+![Screenshot 2024-03-28 182106](https://github.com/Lachiecodes/Active-Directory/assets/138475757/9741e416-68b7-40f2-9352-0075d555b90f)
+15. Finally, once Ubuntu does the initial setup, open the command line interface and verify: `who`
+![Screenshot 2024-03-28 182201](https://github.com/Lachiecodes/Active-Directory/assets/138475757/e78bae65-6e93-4640-8a4a-b3de16aaa525)
+
+
+
+
 ## Conclusion
 In this project, VMware was used to create an integrated AD environment. The first VM was a Windows Server 2019 that served as the DC, DHCP, and Active Directory populated with approximately 1000 users. Once the networking configurations were complete for the server, I then created one more VM and connected them to an internal network using Active Directory.
 
